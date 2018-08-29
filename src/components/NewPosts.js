@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-export default class PostIndex extends Component {
+export default class NewPosts extends Component {
     render(){
         return(
-            <div>Post Index</div>
+            <div>New Post</div>
         )
     }
 }
