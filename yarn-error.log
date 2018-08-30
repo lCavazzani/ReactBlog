@@ -1,0 +1,73 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js eslint node_modules/big.js node_modules/ipaddr.js node_modules/sha.js src/index.js test/test_helper.js **/*.jsx --quiet
+
+PATH: 
+  /Users/leonardoCavazzani/.rvm/gems/ruby-2.3.0/bin:/Users/leonardoCavazzani/.rvm/gems/ruby-2.3.0@global/bin:/Users/leonardoCavazzani/.rvm/rubies/ruby-2.3.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/leonardoCavazzani/Documents/mongodb/mongodb-osx-x86_64-3.2.10/bin:/Users/leonardoCavazzani/.rvm/bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.2.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "redux-simple-starter",
+    "version": "1.0.0",
+    "description": "Simple starter package for Redux with React and Babel support",
+    "main": "index.js",
+    "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
+    "scripts": {
+      "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+      "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+      "test:watch": "npm run test -- --watch"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "babel-core": "^6.2.1",
+      "babel-loader": "^6.2.0",
+      "babel-preset-es2015": "^6.1.18",
+      "babel-preset-react": "^6.1.18",
+      "webpack": "^1.12.9",
+      "webpack-dev-server": "^1.14.0"
+    },
+    "dependencies": {
+      "axios": "^0.18.0",
+      "babel-preset-stage-1": "^6.1.18",
+      "eslint-plugin-prettier": "^2.6.2",
+      "lodash": "4.17.5",
+      "prettier": "^1.12.1",
+      "prettier-eslint": "^8.2.1",
+      "react": "16.3.2",
+      "react-dom": "16.3.2",
+      "react-redux": "5.0.7",
+      "react-router-dom": "^4.2.2",
+      "redux": "4.0.0",
+      "redux-promise": "^0.6.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c /Users/leonardoCavazzani/Desktop/dev/Udemy/Blog/ReduxSimpleStarter/node_modules/.bin/eslint node_modules/big.js node_modules/ipaddr.js node_modules/sha.js src/index.js test/test_helper.js '**/*.jsx' --quiet
+  Directory: /Users/leonardoCavazzani/Desktop/dev/Udemy/Blog/ReduxSimpleStarter
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
+      at ChildProcess.emit (events.js:159:13)
+      at maybeClose (internal/child_process.js:943:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)

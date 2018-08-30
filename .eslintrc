@@ -1,0 +1,31 @@
+{
+  "extends": [
+    "react-app",
+    "prettier",
+    "prettier/react"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "prettier/prettier": ["error", {"trailingComma": "all", "singleQuote": true}],
+    "import/no-namespace": ["error"],
+    "jsx-a11y/href-no-hash": "off",
+    "react/sort-comp": [1, {
+      "order": [
+        "type-annotations",
+        "static-methods",
+        "lifecycle",
+        "/^handle.+$/",
+        "/^on.+$/",
+        "everything-else",
+        "render"
+      ]
+    }]
+  },
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "plugins": [
+    "prettier"
+  ]
+}
