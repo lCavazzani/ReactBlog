@@ -2,30 +2,65 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 class NewPosts extends Component {
-    renderTitleField = field =>{
+    renderField = field =>{
         return(
             <div className="form-group">
-                <label>Title</label>
+                <label>{field.label}</label>
                 <input 
                     text="text"
                     className="form-control"
                     {...field.input}
                 />
+                {field.meta.touched ? field.meta.error : ''}
             </div>
         )
     }
+    onSubmit = values => {
+        console.log(values)
+    }
     render(){
+        const { handleSubmit } = this.props
         return(
-            <form>
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <Field
+                    label="Title"
                     name='title'
-                    component={this.renderTitleField}
+                    component={this.renderField}
                 />
+                <Field
+                    label="Categories"
+                    name='categories'
+                    component={this.renderField}
+                />
+                <Field
+                    label="Post Content"
+                    name='content'
+                    component={this.renderField}
+                />
+                <button className='btn btn-primary' type='submit'>Submit</button>
             </form>
-        )
+        );
     }
 }
 
+function validate (values) {
+    const errors = {}
+
+    if(!values.title) {
+        errors.title="Please enter a title!";
+    }
+    if(!values.categories) {
+        errors.categories="Please enter a title!";
+    }
+    if(!values.content) {
+        errors.content="Please enter a title!";
+    }
+
+    //if errors is empty, the form is fine to submit
+    return errors;
+}
+
 export default reduxForm({
+    validate,
     form: 'PostNewForm'
 })(NewPosts);
