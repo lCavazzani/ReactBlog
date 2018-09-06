@@ -19,12 +19,13 @@ class NewPosts extends Component {
                 <div className="text-help">
                 {touched ? error : ''}
                 </div>
-                
             </div>
         )
     }
     onSubmit = values => {
-        this.props.createPost(values);
+        this.props.createPost(values, () => {
+            this.props.history.push('/')
+        });
     }
     render(){
         const { handleSubmit } = this.props
