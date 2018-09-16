@@ -6,13 +6,24 @@ import { fetchPost } from '../actions';
 class ShowPost extends Component {
     componentDidMount(){
         const { id } = this.props.match.params;
-        this.props.fetchPost();
+        this.props.fetchPost(id);
     }
 
     render(){
+        const { post } = this.props;
+
+        if(!post) {
+            return (
+                <div>
+                    Loading
+                </div>
+            )
+        }
         return(
             <div>
-                Post
+                <h3>{post.title}</h3>
+                <h6>Categories: {post.categories}</h6>
+                <p>{post.content}</p>
             </div>
         );
     };
@@ -23,4 +34,4 @@ function mapStateToProps({ posts }, ownProps) {
 }
 
 
-export default connect(null, { fetchPost })(ShowPost);
+export default connect(mapStateToProps, { fetchPost })(ShowPost);
